@@ -1,0 +1,420 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1B3736563D3E1F509E6E4869 /* Pods_LTMCamera.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4D9B085DBCE0D590B6CF711 /* Pods_LTMCamera.framework */; };
+		27F921402520B2C50007B204 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F9213F2520B2C50007B204 /* AppDelegate.m */; };
+		27F921432520B2C50007B204 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F921422520B2C50007B204 /* SceneDelegate.m */; };
+		27F921462520B2C50007B204 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F921452520B2C50007B204 /* ViewController.m */; };
+		27F921492520B2C50007B204 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27F921472520B2C50007B204 /* Main.storyboard */; };
+		27F9214B2520B2C80007B204 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27F9214A2520B2C80007B204 /* Assets.xcassets */; };
+		27F9214E2520B2C80007B204 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27F9214C2520B2C80007B204 /* LaunchScreen.storyboard */; };
+		27F921512520B2C80007B204 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F921502520B2C80007B204 /* main.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		141D8358928BB45E9EAA0781 /* Pods-LTMCamera.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LTMCamera.debug.xcconfig"; path = "Target Support Files/Pods-LTMCamera/Pods-LTMCamera.debug.xcconfig"; sourceTree = "<group>"; };
+		145A026B24DC997F98501A01 /* Pods-LTMCamera.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LTMCamera.release.xcconfig"; path = "Target Support Files/Pods-LTMCamera/Pods-LTMCamera.release.xcconfig"; sourceTree = "<group>"; };
+		27F9213B2520B2C50007B204 /* LTMCamera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LTMCamera.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		27F9213E2520B2C50007B204 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		27F9213F2520B2C50007B204 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		27F921412520B2C50007B204 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		27F921422520B2C50007B204 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		27F921442520B2C50007B204 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		27F921452520B2C50007B204 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		27F921482520B2C50007B204 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		27F9214A2520B2C80007B204 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		27F9214D2520B2C80007B204 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		27F9214F2520B2C80007B204 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		27F921502520B2C80007B204 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A4D9B085DBCE0D590B6CF711 /* Pods_LTMCamera.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LTMCamera.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		27F921382520B2C50007B204 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B3736563D3E1F509E6E4869 /* Pods_LTMCamera.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1BF83BA972E26D1AA152D502 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				141D8358928BB45E9EAA0781 /* Pods-LTMCamera.debug.xcconfig */,
+				145A026B24DC997F98501A01 /* Pods-LTMCamera.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		27F921322520B2C50007B204 = {
+			isa = PBXGroup;
+			children = (
+				27F9213D2520B2C50007B204 /* LTMCamera */,
+				27F9213C2520B2C50007B204 /* Products */,
+				1BF83BA972E26D1AA152D502 /* Pods */,
+				BFFB0CFAD0DBAF0B889394BA /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		27F9213C2520B2C50007B204 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				27F9213B2520B2C50007B204 /* LTMCamera.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		27F9213D2520B2C50007B204 /* LTMCamera */ = {
+			isa = PBXGroup;
+			children = (
+				27F9213E2520B2C50007B204 /* AppDelegate.h */,
+				27F9213F2520B2C50007B204 /* AppDelegate.m */,
+				27F921412520B2C50007B204 /* SceneDelegate.h */,
+				27F921422520B2C50007B204 /* SceneDelegate.m */,
+				27F921442520B2C50007B204 /* ViewController.h */,
+				27F921452520B2C50007B204 /* ViewController.m */,
+				27F921472520B2C50007B204 /* Main.storyboard */,
+				27F9214A2520B2C80007B204 /* Assets.xcassets */,
+				27F9214C2520B2C80007B204 /* LaunchScreen.storyboard */,
+				27F9214F2520B2C80007B204 /* Info.plist */,
+				27F921502520B2C80007B204 /* main.m */,
+			);
+			path = LTMCamera;
+			sourceTree = "<group>";
+		};
+		BFFB0CFAD0DBAF0B889394BA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A4D9B085DBCE0D590B6CF711 /* Pods_LTMCamera.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		27F9213A2520B2C50007B204 /* LTMCamera */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 27F921542520B2C80007B204 /* Build configuration list for PBXNativeTarget "LTMCamera" */;
+			buildPhases = (
+				DE44B8F575D98992F3E30129 /* [CP] Check Pods Manifest.lock */,
+				27F921372520B2C50007B204 /* Sources */,
+				27F921382520B2C50007B204 /* Frameworks */,
+				27F921392520B2C50007B204 /* Resources */,
+				7CEA064418CE3EBE56BF233A /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LTMCamera;
+			productName = LTMCamera;
+			productReference = 27F9213B2520B2C50007B204 /* LTMCamera.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		27F921332520B2C50007B204 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1200;
+				TargetAttributes = {
+					27F9213A2520B2C50007B204 = {
+						CreatedOnToolsVersion = 12.0.1;
+					};
+				};
+			};
+			buildConfigurationList = 27F921362520B2C50007B204 /* Build configuration list for PBXProject "LTMCamera" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 27F921322520B2C50007B204;
+			productRefGroup = 27F9213C2520B2C50007B204 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				27F9213A2520B2C50007B204 /* LTMCamera */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		27F921392520B2C50007B204 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27F9214E2520B2C80007B204 /* LaunchScreen.storyboard in Resources */,
+				27F9214B2520B2C80007B204 /* Assets.xcassets in Resources */,
+				27F921492520B2C50007B204 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7CEA064418CE3EBE56BF233A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LTMCamera/Pods-LTMCamera-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LTMCamera/Pods-LTMCamera-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LTMCamera/Pods-LTMCamera-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DE44B8F575D98992F3E30129 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LTMCamera-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		27F921372520B2C50007B204 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27F921462520B2C50007B204 /* ViewController.m in Sources */,
+				27F921402520B2C50007B204 /* AppDelegate.m in Sources */,
+				27F921512520B2C80007B204 /* main.m in Sources */,
+				27F921432520B2C50007B204 /* SceneDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		27F921472520B2C50007B204 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				27F921482520B2C50007B204 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		27F9214C2520B2C80007B204 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				27F9214D2520B2C80007B204 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		27F921522520B2C80007B204 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		27F921532520B2C80007B204 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		27F921552520B2C80007B204 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 141D8358928BB45E9EAA0781 /* Pods-LTMCamera.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = X86L5A5P2C;
+				INFOPLIST_FILE = LTMCamera/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.tianrui.LTMCamera;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		27F921562520B2C80007B204 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 145A026B24DC997F98501A01 /* Pods-LTMCamera.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = X86L5A5P2C;
+				INFOPLIST_FILE = LTMCamera/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.tianrui.LTMCamera;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		27F921362520B2C50007B204 /* Build configuration list for PBXProject "LTMCamera" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27F921522520B2C80007B204 /* Debug */,
+				27F921532520B2C80007B204 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		27F921542520B2C80007B204 /* Build configuration list for PBXNativeTarget "LTMCamera" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27F921552520B2C80007B204 /* Debug */,
+				27F921562520B2C80007B204 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 27F921332520B2C50007B204 /* Project object */;
+}
