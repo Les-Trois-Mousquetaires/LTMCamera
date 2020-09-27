@@ -3,13 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		1B3736563D3E1F509E6E4869 /* Pods_LTMCamera.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4D9B085DBCE0D590B6CF711 /* Pods_LTMCamera.framework */; };
 		27F921402520B2C50007B204 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F9213F2520B2C50007B204 /* AppDelegate.m */; };
-		27F921432520B2C50007B204 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F921422520B2C50007B204 /* SceneDelegate.m */; };
 		27F921462520B2C50007B204 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F921452520B2C50007B204 /* ViewController.m */; };
 		27F921492520B2C50007B204 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27F921472520B2C50007B204 /* Main.storyboard */; };
 		27F9214B2520B2C80007B204 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27F9214A2520B2C80007B204 /* Assets.xcassets */; };
@@ -23,8 +22,6 @@
 		27F9213B2520B2C50007B204 /* LTMCamera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LTMCamera.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27F9213E2520B2C50007B204 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		27F9213F2520B2C50007B204 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		27F921412520B2C50007B204 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
-		27F921422520B2C50007B204 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
 		27F921442520B2C50007B204 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		27F921452520B2C50007B204 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		27F921482520B2C50007B204 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -53,7 +50,6 @@
 				141D8358928BB45E9EAA0781 /* Pods-LTMCamera.debug.xcconfig */,
 				145A026B24DC997F98501A01 /* Pods-LTMCamera.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -80,8 +76,6 @@
 			children = (
 				27F9213E2520B2C50007B204 /* AppDelegate.h */,
 				27F9213F2520B2C50007B204 /* AppDelegate.m */,
-				27F921412520B2C50007B204 /* SceneDelegate.h */,
-				27F921422520B2C50007B204 /* SceneDelegate.m */,
 				27F921442520B2C50007B204 /* ViewController.h */,
 				27F921452520B2C50007B204 /* ViewController.m */,
 				27F921472520B2C50007B204 /* Main.storyboard */,
@@ -217,7 +211,6 @@
 				27F921462520B2C50007B204 /* ViewController.m in Sources */,
 				27F921402520B2C50007B204 /* AppDelegate.m in Sources */,
 				27F921512520B2C80007B204 /* main.m in Sources */,
-				27F921432520B2C50007B204 /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,7 +287,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -347,7 +340,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -364,13 +357,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X86L5A5P2C;
 				INFOPLIST_FILE = LTMCamera/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tianrui.LTMCamera;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -383,13 +377,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X86L5A5P2C;
 				INFOPLIST_FILE = LTMCamera/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tianrui.LTMCamera;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
