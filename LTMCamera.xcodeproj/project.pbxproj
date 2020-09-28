@@ -14,6 +14,8 @@
 		27F9214B2520B2C80007B204 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27F9214A2520B2C80007B204 /* Assets.xcassets */; };
 		27F9214E2520B2C80007B204 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27F9214C2520B2C80007B204 /* LaunchScreen.storyboard */; };
 		27F921512520B2C80007B204 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F921502520B2C80007B204 /* main.m */; };
+		27F9216925217CB60007B204 /* CustomCameraVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F9216825217CB60007B204 /* CustomCameraVC.m */; };
+		27F921722521C8980007B204 /* ImageDealVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F921712521C8980007B204 /* ImageDealVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,11 @@
 		27F9214D2520B2C80007B204 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		27F9214F2520B2C80007B204 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		27F921502520B2C80007B204 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		27F9216725217CB60007B204 /* CustomCameraVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomCameraVC.h; sourceTree = "<group>"; };
+		27F9216825217CB60007B204 /* CustomCameraVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomCameraVC.m; sourceTree = "<group>"; };
+		27F9216B2521840D0007B204 /* LTMCamera-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LTMCamera-Bridging-Header.h"; sourceTree = "<group>"; };
+		27F921702521C8980007B204 /* ImageDealVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageDealVC.h; sourceTree = "<group>"; };
+		27F921712521C8980007B204 /* ImageDealVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageDealVC.m; sourceTree = "<group>"; };
 		A4D9B085DBCE0D590B6CF711 /* Pods_LTMCamera.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LTMCamera.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -78,11 +85,16 @@
 				27F9213F2520B2C50007B204 /* AppDelegate.m */,
 				27F921442520B2C50007B204 /* ViewController.h */,
 				27F921452520B2C50007B204 /* ViewController.m */,
-				27F921472520B2C50007B204 /* Main.storyboard */,
 				27F9214A2520B2C80007B204 /* Assets.xcassets */,
+				27F9216725217CB60007B204 /* CustomCameraVC.h */,
+				27F9216825217CB60007B204 /* CustomCameraVC.m */,
+				27F921702521C8980007B204 /* ImageDealVC.h */,
+				27F921712521C8980007B204 /* ImageDealVC.m */,
+				27F921472520B2C50007B204 /* Main.storyboard */,
 				27F9214C2520B2C80007B204 /* LaunchScreen.storyboard */,
 				27F9214F2520B2C80007B204 /* Info.plist */,
 				27F921502520B2C80007B204 /* main.m */,
+				27F9216B2521840D0007B204 /* LTMCamera-Bridging-Header.h */,
 			);
 			path = LTMCamera;
 			sourceTree = "<group>";
@@ -127,6 +139,7 @@
 				TargetAttributes = {
 					27F9213A2520B2C50007B204 = {
 						CreatedOnToolsVersion = 12.0.1;
+						LastSwiftMigration = 1200;
 					};
 				};
 			};
@@ -208,6 +221,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27F921722521C8980007B204 /* ImageDealVC.m in Sources */,
+				27F9216925217CB60007B204 /* CustomCameraVC.m in Sources */,
 				27F921462520B2C50007B204 /* ViewController.m in Sources */,
 				27F921402520B2C50007B204 /* AppDelegate.m in Sources */,
 				27F921512520B2C80007B204 /* main.m in Sources */,
@@ -354,6 +369,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X86L5A5P2C;
 				INFOPLIST_FILE = LTMCamera/Info.plist;
@@ -364,6 +380,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tianrui.LTMCamera;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "LTMCamera/LTMCamera-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -374,6 +393,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X86L5A5P2C;
 				INFOPLIST_FILE = LTMCamera/Info.plist;
@@ -384,6 +404,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tianrui.LTMCamera;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "LTMCamera/LTMCamera-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

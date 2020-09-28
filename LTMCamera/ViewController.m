@@ -7,7 +7,12 @@
 
 #import "ViewController.h"
 
-@interface ViewController ()
+#import <AVFoundation/AVFoundation.h>
+
+#import "CustomCameraVC.h"
+@interface ViewController ()<UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+
+@property (strong, nonatomic) UIImagePickerController *imagePicker;
 
 @end
 
@@ -16,7 +21,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.imagePicker = [[UIImagePickerController alloc]init];
+    self.imagePicker.delegate = self;
+    self.imagePicker.allowsEditing = true;
+    
 }
 
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    
+    CustomCameraVC *vc = [[CustomCameraVC alloc]init];
+    vc.modalPresentationStyle = UIModalPresentationFullScreen;
+    
+    [self presentViewController:vc animated:YES completion:nil];
+    
+}
 
 @end
