@@ -6,7 +6,7 @@
 //
 
 #import "ImageDealVC.h"
-
+#import "ImageEditVC.h"
 #import <Masonry/Masonry.h>
 @interface ImageDealVC ()
 /// 原图
@@ -39,8 +39,12 @@
 }
 
 - (void)editBtnClick {
-    
+    ImageEditVC *edit = [[ImageEditVC alloc]init];
+    edit.image = self.image;
+    edit.modalPresentationStyle = UIModalPresentationFullScreen;
+    [self presentViewController:edit animated:true completion:nil];
 }
+
 - (void)configOperationUI {
     [self.view addSubview:self.originImage];
     [self.view addSubview:self.completeBtn];

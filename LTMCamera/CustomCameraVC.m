@@ -126,6 +126,7 @@ typedef void (^PermissionBlock)(BOOL result);
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+
 - (void)takePictureBtnClick {
     AVCaptureConnection *videoConnection = [self.imageOutput connectionWithMediaType:AVMediaTypeVideo];
     if (videoConnection == nil) {
@@ -137,25 +138,9 @@ typedef void (^PermissionBlock)(BOOL result);
     
 }
 
-- (void)captureOutput:(AVCapturePhotoOutput *)output didFinishProcessingPhotoSampleBuffer:(nullable CMSampleBufferRef)photoSampleBuffer previewPhotoSampleBuffer:(nullable CMSampleBufferRef)previewPhotoSampleBuffer resolvedSettings:(AVCaptureResolvedPhotoSettings *)resolvedSettings bracketSettings:(nullable AVCaptureBracketedStillImageSettings *)bracketSettings error:(nullable NSError *)error API_DEPRECATED_WITH_REPLACEMENT("-captureOutput:didFinishProcessingPhoto:error:", ios(10.0, 11.0)){
-    NSData *data = [AVCapturePhotoOutput JPEGPhotoDataRepresentationForJPEGSampleBuffer:photoSampleBuffer previewPhotoSampleBuffer:previewPhotoSampleBuffer];
-       UIImage *image = [UIImage imageWithData:data];
-       
-    ImageDealVC *dealVC = [[ImageDealVC alloc]init];
-    dealVC.modalPresentationStyle = UIModalPresentationFullScreen;
-    dealVC.image = image;
-    [self presentViewController:dealVC animated:true completion:nil];
-}
 
-- (void)captureOutput:(AVCapturePhotoOutput *)output didFinishProcessingPhoto:(AVCapturePhoto *)photo error:(NSError *)error API_AVAILABLE(ios(11.0)){
-    UIImage *image = nil;
-    NSData *data = [photo fileDataRepresentation];
-    image = [UIImage imageWithData:data];
-    ImageDealVC *dealVC = [[ImageDealVC alloc]init];
-    dealVC.modalPresentationStyle = UIModalPresentationFullScreen;
-    dealVC.image = image;
-    [self presentViewController:dealVC animated:true completion:nil];
-}
+
+
 
 - (void)focusGesture:(UITapGestureRecognizer*)gesture{
     CGPoint point = [gesture locationInView:gesture.view];
@@ -194,4 +179,24 @@ typedef void (^PermissionBlock)(BOOL result);
     }
 
 }
+
+#pragma mark - AVCapturePhotoCaptureDelegate
+
+- (void)captureOutput:(AVCapturePhotoOutput *)output didFinishProcessingPhotoSampleBuffer:(nullable CMSampleBufferRef)photoSampleBuffer previewPhotoSampleBuffer:(nullable CMSampleBufferRef)previewPhotoSampleBuffer resolvedSettings:(AVCaptureResolvedPhotoSettings *)resolvedSettings bracketSettings:(nullable AVCaptureBracketedStillImageSettings *)bracketSettings error:(nullable NSError *)error API_DEPRECATED_WITH_REPLACEMENT("-captureOutput:didFinishProcessingPhoto:error:", ios(10.0, 11.0)){
+    NSData *data = [AVCapturePhotoOutput JPEGPhotoDataRepresentationForJPEGSampleBuffer:photoSampleBuffer previewPhotoSampleBuffer:previewPhotoSampleBuffer];
+    [self presenToImageDealVC:data];
+}
+
+- (void)captureOutput:(AVCapturePhotoOutput *)output didFinishProcessingPhoto:(AVCapturePhoto *)photo error:(NSError *)error API_AVAILABLE(ios(11.0)){
+    NSData *data = [photo fileDataRepresentation];
+    [self presenToImageDealVC:data];
+}
+
+- (void)presenToImageDealVC:(NSData *)data {
+    ImageDealVC *dealVC = [[ImageDealVC alloc]init];
+    dealVC.modalPresentationStyle = UIModalPresentationFullScreen;
+    dealVC.image = [UIImage imageWithData:data];
+    [self presentViewController:dealVC animated:true completion:nil];
+}
+
 @end

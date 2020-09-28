@@ -16,6 +16,7 @@
 		27F921512520B2C80007B204 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F921502520B2C80007B204 /* main.m */; };
 		27F9216925217CB60007B204 /* CustomCameraVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F9216825217CB60007B204 /* CustomCameraVC.m */; };
 		27F921722521C8980007B204 /* ImageDealVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F921712521C8980007B204 /* ImageDealVC.m */; };
+		27F921772521D80C0007B204 /* ImageEditVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F921762521D80C0007B204 /* ImageEditVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,8 @@
 		27F9216B2521840D0007B204 /* LTMCamera-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LTMCamera-Bridging-Header.h"; sourceTree = "<group>"; };
 		27F921702521C8980007B204 /* ImageDealVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageDealVC.h; sourceTree = "<group>"; };
 		27F921712521C8980007B204 /* ImageDealVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageDealVC.m; sourceTree = "<group>"; };
+		27F921752521D80C0007B204 /* ImageEditVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageEditVC.h; sourceTree = "<group>"; };
+		27F921762521D80C0007B204 /* ImageEditVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageEditVC.m; sourceTree = "<group>"; };
 		A4D9B085DBCE0D590B6CF711 /* Pods_LTMCamera.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LTMCamera.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -90,6 +93,8 @@
 				27F9216825217CB60007B204 /* CustomCameraVC.m */,
 				27F921702521C8980007B204 /* ImageDealVC.h */,
 				27F921712521C8980007B204 /* ImageDealVC.m */,
+				27F921752521D80C0007B204 /* ImageEditVC.h */,
+				27F921762521D80C0007B204 /* ImageEditVC.m */,
 				27F921472520B2C50007B204 /* Main.storyboard */,
 				27F9214C2520B2C80007B204 /* LaunchScreen.storyboard */,
 				27F9214F2520B2C80007B204 /* Info.plist */,
@@ -223,6 +228,7 @@
 			files = (
 				27F921722521C8980007B204 /* ImageDealVC.m in Sources */,
 				27F9216925217CB60007B204 /* CustomCameraVC.m in Sources */,
+				27F921772521D80C0007B204 /* ImageEditVC.m in Sources */,
 				27F921462520B2C50007B204 /* ViewController.m in Sources */,
 				27F921402520B2C50007B204 /* AppDelegate.m in Sources */,
 				27F921512520B2C80007B204 /* main.m in Sources */,
