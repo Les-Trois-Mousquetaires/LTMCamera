@@ -8,7 +8,9 @@
 #import "ImageDealVC.h"
 #import "ImageEditVC.h"
 #import <Masonry/Masonry.h>
+
 @interface ImageDealVC ()
+@property(nonatomic,assign) BOOL statusHiden;
 /// 原图
 @property (strong, nonatomic) UIImageView *originImage;
 /// 返回
@@ -21,18 +23,20 @@
 
 @implementation ImageDealVC
 
+- (BOOL)prefersStatusBarHidden{
+    return  self.statusHiden;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-
+    self.statusHiden = true;
     [self configOperationUI];
-
 }
 
 - (void)backBtnClick {
     [self dismissViewControllerAnimated:true completion:nil];
 }
-
 
 - (void)completeBtnClick {
     
@@ -70,7 +74,6 @@
         make.centerY.equalTo(self.completeBtn);
         make.right.equalTo(self.view).offset(-50);
     }];
-    
 }
 
 - (void)dealloc{
@@ -81,6 +84,7 @@
     if (!_originImage) {
         _originImage = [[UIImageView alloc]init];
     }
+    
     return _originImage;
 }
 
@@ -102,7 +106,6 @@
         _completeBtn.backgroundColor = [UIColor colorWithRed:247/255.0 green:223/255.0 blue:0/255.0 alpha:1];
         _completeBtn.layer.cornerRadius = 5;
         [_completeBtn addTarget:self action:@selector(completeBtnClick) forControlEvents:(UIControlEventTouchUpInside)];
-
     }
     
     return _completeBtn;
@@ -113,10 +116,8 @@
         _editBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         [_editBtn setBackgroundImage:[UIImage imageNamed:@"EditBtnImage"] forState:UIControlStateNormal];
         [_editBtn addTarget:self action:@selector(editBtnClick) forControlEvents:(UIControlEventTouchUpInside)];
-
     }
     
     return _editBtn;
 }
-
 @end

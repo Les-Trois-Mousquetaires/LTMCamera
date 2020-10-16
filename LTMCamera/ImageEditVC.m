@@ -10,6 +10,8 @@
 #import <Masonry/Masonry.h>
 
 @interface ImageEditVC ()
+@property(nonatomic,assign) BOOL statusHiden;
+
 /// 原图
 @property (strong, nonatomic) UIImageView *originImage;
 /// 左转
@@ -24,21 +26,37 @@
 @property (strong, nonatomic) UIButton *resetBtn;
 /// 确定
 @property (strong, nonatomic) UIButton *sureBtn;
+
+@property (strong, nonatomic) UIImage *editImage;
 @end
 
 @implementation ImageEditVC
 
+- (BOOL)prefersStatusBarHidden{
+    return  self.statusHiden;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.statusHiden = true;
     self.view.backgroundColor = [UIColor colorWithRed:51/255.0 green:51/255.0 blue:51/255.0 alpha:1];
     [self configOperationUI];
-
+    self.editImage = self.image;
 }
 
 #pragma mark - Event
 
 - (void)turnLeftBtnClick{
-    
+    UIImage *showImage = [UIImage imageWithCGImage:self.editImage.CGImage scale:self.editImage.scale orientation:UIImageOrientationLeft];
+    self.editImage = showImage;
+    self.originImage.image = showImage;
+    CGRect rect = self.originImage.frame;
+    if (rect.size.height > rect.size.width) {
+        /// 长大图
+    }else{
+        
+    }
+    self.originImage.frame = CGRectMake(rect.origin.y, rect.origin.x, rect.size.width, rect.size.height);
 }
 
 - (void)turnRightBtnClick{
@@ -57,43 +75,38 @@
 - (void)sureBtnClick {
     
 }
+
 - (void)configOperationUI {
-    [self.view addSubview:self.originImage];
     [self.view addSubview:self.turnLeftBtn];
     [self.view addSubview:self.turnRightBtn];
     [self.view addSubview:self.lineView];
     [self.view addSubview:self.cancelBtn];
     [self.view addSubview:self.resetBtn];
     [self.view addSubview:self.sureBtn];
-    CGFloat scale = (UIScreen.mainScreen.bounds.size.width  - 48 * 2)/UIScreen.mainScreen.bounds.size.width;
+    [self.view addSubview:self.originImage];
     
-    [self.originImage mas_makeConstraints:^(MASConstraintMaker *make) {
-        if (@available(iOS 11.0, *)) {
-            make.top.equalTo(self.view.mas_safeAreaLayoutGuideTop).offset(20);
-        } else {
-            make.top.equalTo(self.view).offset(20);
-        }
-        make.left.equalTo(self.view).offset(48);
-        make.right.equalTo(self.view).offset(-48);
-        make.height.mas_equalTo(UIScreen.mainScreen.bounds.size.height * scale);
-    }];
+    CGFloat scale = UIScreen.mainScreen.bounds.size.width / UIScreen.mainScreen.bounds.size.height;
     self.originImage.image = self.image;
     
     [self.sureBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.right.equalTo(self.view).offset(-20);
+        make.right.equalTo(self.view).offset(-20);
+        make.bottom.equalTo(self.view).offset(-14);
         make.width.equalTo(self.view).dividedBy(6);
+        make.height.mas_equalTo(32);
     }];
     [self.resetBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(self.sureBtn);
         make.centerX.equalTo(self.view);
+        make.size.equalTo(self.sureBtn);
     }];
     [self.cancelBtn  mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(self.sureBtn);
         make.left.equalTo(self.view).offset(20);
+        make.size.equalTo(self.sureBtn);
     }];
     
     [self.lineView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.equalTo(self.sureBtn.mas_top).offset(-20);
+        make.bottom.equalTo(self.sureBtn.mas_top).offset(-14);
         make.left.right.equalTo(self.view);
         make.height.mas_equalTo(1);
     }];
@@ -102,14 +115,23 @@
         make.bottom.equalTo(self.lineView.mas_top).offset(-20);
     }];
     [self.turnRightBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.centerY.equalTo(self.turnLeftBtn);
-            make.right.equalTo(self.sureBtn);
+        make.centerY.equalTo(self.turnLeftBtn);
+        make.right.equalTo(self.sureBtn);
+    }];
+    
+    [self.originImage mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.view.mas_safeAreaLayoutGuideTop).offset(10);
+        make.centerX.equalTo(self.view);
+        make.bottom.equalTo(self.turnRightBtn.mas_top).offset(-30);
+        make.width.equalTo(self.originImage.mas_height).multipliedBy(scale);
     }];
 }
 
 - (void)dealloc{
     NSLog(@"图片释放了");
 }
+
+#pragma mark - UILazy
 
 - (UIImageView *)originImage{
     if (!_originImage) {

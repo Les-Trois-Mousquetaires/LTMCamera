@@ -42,5 +42,7 @@
 	<string>添加照片</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>使用照片</string>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<true/>
 </dict>
 </plist>
