@@ -10,6 +10,9 @@
 #import <Masonry/Masonry.h>
 
 @interface ImageEditVC ()
+{
+    double Degree;
+}
 @property(nonatomic,assign) BOOL statusHiden;
 
 /// 原图
@@ -28,6 +31,7 @@
 @property (strong, nonatomic) UIButton *sureBtn;
 
 @property (strong, nonatomic) UIImage *editImage;
+
 @end
 
 @implementation ImageEditVC
@@ -42,26 +46,59 @@
     self.view.backgroundColor = [UIColor colorWithRed:51/255.0 green:51/255.0 blue:51/255.0 alpha:1];
     [self configOperationUI];
     self.editImage = self.image;
+    Degree = 0/180.0;
 }
 
 #pragma mark - Event
 
 - (void)turnLeftBtnClick{
-    UIImage *showImage = [UIImage imageWithCGImage:self.editImage.CGImage scale:self.editImage.scale orientation:UIImageOrientationLeft];
-    self.editImage = showImage;
-    self.originImage.image = showImage;
-    CGRect rect = self.originImage.frame;
-    if (rect.size.height > rect.size.width) {
-        /// 长大图
+    CGFloat scale = UIScreen.mainScreen.bounds.size.width / UIScreen.mainScreen.bounds.size.height;
+
+     Degree =  Degree - 90.0/180.0;
+        CGAffineTransform transform= CGAffineTransformMakeRotation(M_PI* Degree);
+    self.originImage.transform = transform;//旋转
+    int value = Degree / 0.5;
+
+    if (value % 2 == 1) {
+        [self.originImage mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.center.equalTo(self.view);
+            make.height.mas_equalTo(UIScreen.mainScreen.bounds.size.width - 40);
+            make.width.mas_equalTo((UIScreen.mainScreen.bounds.size.width - 40) * 2/3);
+        }];
     }else{
-        
+        [self.originImage mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.view.mas_safeAreaLayoutGuideTop).offset(10);
+            make.centerX.equalTo(self.view);
+            make.bottom.equalTo(self.turnRightBtn.mas_top).offset(-30);
+            make.width.equalTo(self.originImage.mas_height).multipliedBy(scale);
+        }];
     }
-    self.originImage.frame = CGRectMake(rect.origin.y, rect.origin.x, rect.size.width, rect.size.height);
 }
 
 - (void)turnRightBtnClick{
-    
+    CGFloat scale = UIScreen.mainScreen.bounds.size.width / UIScreen.mainScreen.bounds.size.height;
+
+     Degree =  Degree + 90.0/180.0;
+        CGAffineTransform transform= CGAffineTransformMakeRotation(M_PI* Degree);
+    self.originImage.transform = transform;//旋转
+    int value = Degree / 0.5;
+
+    if (value % 2 == 1) {
+        [self.originImage mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.center.equalTo(self.view);
+            make.height.mas_equalTo(UIScreen.mainScreen.bounds.size.width - 40);
+            make.width.mas_equalTo((UIScreen.mainScreen.bounds.size.width - 40) * 2/3);
+        }];
+    }else{
+        [self.originImage mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.view.mas_safeAreaLayoutGuideTop).offset(10);
+            make.centerX.equalTo(self.view);
+            make.bottom.equalTo(self.turnRightBtn.mas_top).offset(-30);
+            make.width.equalTo(self.originImage.mas_height).multipliedBy(scale);
+        }];
+    }
 }
+
 
 - (void)cancelBtnClick {
     [self dismissViewControllerAnimated:true completion:nil];
@@ -137,6 +174,7 @@
     if (!_originImage) {
         _originImage = [[UIImageView alloc]init];
     }
+    
     return _originImage;
 }
 
