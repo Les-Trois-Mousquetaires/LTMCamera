@@ -33,6 +33,11 @@
 @property (nonatomic, strong) UIImage *editImage;
 @property (nonatomic, assign) BOOL isEdit;
 
+/// 起始点
+@property (nonatomic, assign) CGPoint startPoint;
+/// 半透明view
+@property (nonatomic, strong) UIView *clipView;
+
 @end
 
 @implementation ImageEditVC
@@ -48,7 +53,59 @@
     [self configOperationUI];
     self.editImage = self.image;
     Degree = 0/180.0;
+    // 给控制器的view添加pan手势
+        UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(pan:)];
+        
+        [self.view addGestureRecognizer:pan];
 }
+
+-(void)pan:(UIPanGestureRecognizer *)pan {
+    [self configEdit];
+    CGPoint endPoint = CGPointZero;
+
+    if (pan.state == UIGestureRecognizerStateBegan) { //一开始拖动的时候
+        // 获取一开始的点
+        self.startPoint = [pan locationInView:self.view];
+    } else if (pan.state == UIGestureRecognizerStateChanged) { // 拖动过程中
+        // 获取结束点
+        endPoint = [pan locationInView:self.view];
+        
+        CGFloat w = endPoint.x - _startPoint.x;
+        CGFloat h = endPoint.y - _startPoint.y;
+        
+        // 截取范围
+        CGRect clipRect = CGRectMake(self.startPoint.x, self.startPoint.y, w, h);
+        self.clipView.frame = clipRect;
+    } else if (pan.state == UIGestureRecognizerStateEnded) {
+        // 创建上下文
+        UIGraphicsBeginImageContextWithOptions(self.originImage.bounds.size, NO, 0);
+        
+        // 获取上下文
+        CGContextRef context = UIGraphicsGetCurrentContext();
+        
+        // 设置裁剪区域
+        UIBezierPath *path = [UIBezierPath bezierPathWithRect:self.clipView.frame];
+        
+        // 添加裁剪
+        [path addClip];
+        // 将图片渲染到上下图中
+        [self.originImage.layer renderInContext:context];
+        
+        // 获取截取下来的图片
+        UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+        
+        UIGraphicsEndImageContext();
+        [self turnTransform:0];
+
+        self.originImage.image = image;
+        
+        // 截取的半透明view移除
+        [self.clipView removeFromSuperview];
+        
+        self.clipView = nil;
+    }
+}
+
 
 #pragma mark - Event
 
@@ -167,6 +224,8 @@
 - (UIImageView *)originImage{
     if (!_originImage) {
         _originImage = [[UIImageView alloc]init];
+        _originImage.contentMode = UIViewContentModeScaleAspectFill;
+        
     }
     
     return _originImage;
@@ -239,4 +298,15 @@
     return _sureBtn;
 }
 
+-(UIView *)clipView {
+    if (!_clipView) {
+        _clipView = [[UIView alloc] init];
+        _clipView.backgroundColor = [UIColor blackColor];
+        _clipView.alpha = 0.3;
+        
+        [self.view addSubview:_clipView];
+    }
+    
+    return _clipView;
+}
 @end
