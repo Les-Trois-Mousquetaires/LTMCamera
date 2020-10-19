@@ -13,24 +13,25 @@
 {
     double Degree;
 }
-@property(nonatomic,assign) BOOL statusHiden;
+@property (nonatomic, assign) BOOL statusHiden;
 
 /// 原图
-@property (strong, nonatomic) UIImageView *originImage;
+@property (nonatomic, strong) UIImageView *originImage;
 /// 左转
-@property (strong, nonatomic) UIButton *turnLeftBtn;
+@property (nonatomic, strong) UIButton *turnLeftBtn;
 /// 右转
-@property (strong, nonatomic) UIButton *turnRightBtn;
+@property (nonatomic, strong) UIButton *turnRightBtn;
 /// 线
-@property (strong, nonatomic) UIView *lineView;
+@property (nonatomic, strong) UIView *lineView;
 /// 取消
-@property (strong, nonatomic) UIButton *cancelBtn;
+@property (nonatomic, strong) UIButton *cancelBtn;
 /// 还原
-@property (strong, nonatomic) UIButton *resetBtn;
+@property (nonatomic, strong) UIButton *resetBtn;
 /// 确定
-@property (strong, nonatomic) UIButton *sureBtn;
+@property (nonatomic, strong) UIButton *sureBtn;
 
-@property (strong, nonatomic) UIImage *editImage;
+@property (nonatomic, strong) UIImage *editImage;
+@property (nonatomic, assign) BOOL isEdit;
 
 @end
 
@@ -52,37 +53,24 @@
 #pragma mark - Event
 
 - (void)turnLeftBtnClick{
-    CGFloat scale = UIScreen.mainScreen.bounds.size.width / UIScreen.mainScreen.bounds.size.height;
-
-     Degree =  Degree - 90.0/180.0;
-        CGAffineTransform transform= CGAffineTransformMakeRotation(M_PI* Degree);
-    self.originImage.transform = transform;//旋转
-    int value = Degree / 0.5;
-
-    if (value % 2 == 1) {
-        [self.originImage mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.center.equalTo(self.view);
-            make.height.mas_equalTo(UIScreen.mainScreen.bounds.size.width - 40);
-            make.width.mas_equalTo((UIScreen.mainScreen.bounds.size.width - 40) * 2/3);
-        }];
-    }else{
-        [self.originImage mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.view.mas_safeAreaLayoutGuideTop).offset(10);
-            make.centerX.equalTo(self.view);
-            make.bottom.equalTo(self.turnRightBtn.mas_top).offset(-30);
-            make.width.equalTo(self.originImage.mas_height).multipliedBy(scale);
-        }];
-    }
+    [self configEdit];
+    Degree =  Degree - 90.0/180.0;
+    [self turnTransform:Degree];
 }
 
 - (void)turnRightBtnClick{
+    [self configEdit];
+    Degree =  Degree + 90.0/180.0;
+    [self turnTransform:Degree];
+}
+/// 进行旋转
+- (void)turnTransform:(double)angle {
     CGFloat scale = UIScreen.mainScreen.bounds.size.width / UIScreen.mainScreen.bounds.size.height;
-
-     Degree =  Degree + 90.0/180.0;
-        CGAffineTransform transform= CGAffineTransformMakeRotation(M_PI* Degree);
+    
+    CGAffineTransform transform= CGAffineTransformMakeRotation(M_PI* angle);
     self.originImage.transform = transform;//旋转
-    int value = Degree / 0.5;
-
+    int value = angle / 0.5;
+    
     if (value % 2 == 1) {
         [self.originImage mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.center.equalTo(self.view);
@@ -99,6 +87,11 @@
     }
 }
 
+- (void)configEdit {
+    self.isEdit = true;
+    [self.resetBtn setTitleColor:[UIColor whiteColor] forState:(UIControlStateNormal)];
+    self.resetBtn.enabled = true;
+}
 
 - (void)cancelBtnClick {
     [self dismissViewControllerAnimated:true completion:nil];
@@ -106,7 +99,8 @@
 
 
 - (void)resetBtnClick {
-    
+    [self turnTransform:0];
+    self.originImage.image = self.image;
 }
 
 - (void)sureBtnClick {
@@ -225,6 +219,7 @@
         [_resetBtn setTitleColor:[UIColor colorWithRed:102/255.0 green:102/255.0 blue:102/255.0 alpha:1] forState:(UIControlStateNormal)];
         _resetBtn.titleLabel.font = [UIFont systemFontOfSize:16 weight:UIFontWeightMedium];
         [_resetBtn addTarget:self action:@selector(resetBtnClick) forControlEvents:(UIControlEventTouchUpInside)];
+        _resetBtn.enabled = false;
     }
     
     return _resetBtn;
